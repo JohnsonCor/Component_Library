@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f0f8ea;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content {
+  height: 200vh;
+  background-image: url(https://source.unsplash.com/random);
+  background-color: #333;
+  color: white;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  background: #e54b4b;
+  color: #ebebd3;
+  padding: 1em 0;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.logo {
+  float: left;
+  font: 1rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.logo span {
+  font-weight: 300;
+}
+
+.site-nav {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  background: #464655;
+  height: 0px;
+  overflow: hidden;
+}
+
+.site-nav--open {
+  height: auto;
+}
+
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav li {
+  border-bottom: 1px solid #575766;
+}
+
+.site-nav li:last-child {
+  border-bottom: none;
+}
+
+.site-nav a {
+  color: #ebebd3;
+  display: block;
+  padding: 2em 4em 2em 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: #e4b363;
+  color: #464655;
+}
+
+.site-nav--icon {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-right: 1em;
+  width: 1.1em;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.menu-toggle {
+  padding: 1em;
+  position: absolute;
+  top: 1.25em;
+  right: 0.5em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  background: #ebebd3;
+  height: 3px;
+  width: 1.75em;
+  border-radius: 3px;
+  transition: all ease-in-out 500ms;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.open .hamburger {
+  transform: rotate(45deg);
+}
+
+.open .hamburger::before {
+  opacity: 0;
+}
+
+.open .hamburger::after {
+  transform: translateY(-3px) rotate(-90deg);
+}
