@@ -57,12 +57,15 @@ header::after {
   top: 100%;
   right: 0%;
   background: #464655;
-  height: 0px;
-  overflow: hidden;
+  /* height: 0px; */
+  /* overflow: hidden; */
+  clip-path: circle(0px at top right);
+  transition: all ease-in-out 600ms;
 }
 
 .site-nav--open {
-  height: auto;
+  /* height: auto; */
+  clip-path: circle(150% at top center);
 }
 
 .site-nav ul {
@@ -140,4 +143,37 @@ header::after {
 
 .open .hamburger::after {
   transform: translateY(-3px) rotate(-90deg);
+}
+
+@media (min-width: 700px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    height: auto;
+    position: relative;
+    background: transparent;
+    float: right;
+    clip-path: initial;
+  }
+
+  .site-nav li {
+    display: inline-block;
+    border: none;
+  }
+
+  .site-nav a {
+    padding: 0;
+    margin-left: 3em;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus {
+    background: transparent;
+  }
+
+  .site-nav--icon {
+    display: none !important;
+  }
 }
