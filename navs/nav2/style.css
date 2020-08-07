@@ -60,7 +60,7 @@ header::after {
   /* height: 0px; */
   /* overflow: hidden; */
   clip-path: circle(0px at top right);
-  transition: all ease-in-out 600ms;
+  transition: clip-path ease-in-out 600ms;
 }
 
 .site-nav--open {
